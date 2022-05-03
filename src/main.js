@@ -1,1 +1,0 @@
-'This is a main js file'
