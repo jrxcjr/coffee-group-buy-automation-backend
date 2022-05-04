@@ -59,12 +59,25 @@ let ordersObject = [
 ]
 
 import { CoffeeClass } from "./classes/Coffee"
-import { OrderInterface, OrderItemInterface } from "./interfaces/interfaces"
+import { User } from "./classes/User"
+import { Roaster } from "./classes/Roaster"
 
 function createCoffee(id:number, roaster_id:number, name:string, weight:number, price:number, description:string) {
     const createdCoffee = new CoffeeClass(id, roaster_id, name, weight, price, description);
 
     return console.log(createdCoffee)
+}
+
+function createUser(id:number, name:string, address:string, document:string) {
+  const createdUser = new User(id, name, address,document);
+
+  return console.log(createdUser)
+}
+
+function createRoastery(id:number, name:string, address:string) {
+  const createdRoaster = new Roaster(id, name, address)
+
+  return console.log(createdRoaster)
 }
   
   function findCoffee(coffeeId:number) {
@@ -93,16 +106,7 @@ function createCoffee(id:number, roaster_id:number, name:string, weight:number, 
     return weight
   }
   
-  function LoggingResults () {
-  console.log("This is the computed Order price", totalPrice(ordersObject[0].order))
-  
-  console.log("This is the computed Order weight", totalWeight(ordersObject[0].order))
-  
-  console.log(findCoffee(1))
-}
 
-LoggingResults()
+createUser(1, "Paulo", "Rua do nada, Nº 0", "100.200.300-99")
 createCoffee(1, 1, "café da pedra do tempo", 250, 22, "Esse é um café legal" )
-
-
-export {LoggingResults, createCoffee, totalWeight,totalPrice, findCoffee}
+createRoastery(1, "Kaffe", "Av. Conselheiro aguiar 1234")
